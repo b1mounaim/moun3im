@@ -11,155 +11,75 @@
   </head>
 <body>
 <style>
-	.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
+	@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+body {
+  background: #000000;
+  text-align: center;
+  color: #fff;
+  font-size: 32px;
+  font-family: 'Roboto',Arial;
+  font-weight: 300;
+  color: #bbc;
 }
 
-.dash {
-  margin: 0 15px;
-  width: 35px;
-  height: 15px;
-  border-radius: 8px;
-  background: #FF2CBD;
-  box-shadow: 0 0 10px 0 #FECDFF;
+div {
+    position: relative;
+    height: calc( 100vh - 60px);
+    transform: translateY(50%);
 }
 
-.uno {
-  margin-right: -18px;
-  transform-origin: center left;
-  animation: spin 3s linear infinite;  
+span {
+  display: inline-block;
+  transition: all ease 0.9s;
+  opacity: 0;
+  min-width: 10px;
 }
 
-.dos {
-  transform-origin: center right;
-  animation: spin2 3s linear infinite;
-  animation-delay: .2s;
+
+</style>
+	
+	div Abdelmounaim :) keep smilling
+	<script>
+	function _(x) {
+  return document.querySelectorAll(x);
 }
 
-.tres {
-  transform-origin: center right;
-  animation: spin3 3s linear infinite;
-  animation-delay: .3s;
+function r(min=0,max=0) {
+  return min + Math.round(Math.random() * (max-min));
 }
 
-.cuatro {
-  transform-origin: center right;
-  animation: spin4 3s linear infinite;
-  animation-delay: .4s;
-}
+//wrap each letter with <span>
+_('div')[0].innerHTML = ('<span>' +  _('div')[0].innerHTML.trim().split('').join('</span><span>') + '</span>');
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(360deg);
-  }
-  30% {
-    transform: rotate(370deg);
-  }
-  35% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+var frame = 0;
 
-@keyframes spin2 {
-  0% {
-    transform: rotate(0deg);
-  }
-  20% {
-    transform: rotate(0deg);
-  }
-  30% {
-    transform: rotate(-180deg);
-  }
-  35% {
-    transform: rotate(-190deg);
-  }
-  40% {
-    transform: rotate(-180deg);
-  }
-  78% {
-    transform: rotate(-180deg);
-  }
-  95% {
-    transform: rotate(-360deg);
-  }
-  98% {
-    transform: rotate(-370deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
+setInterval(function() {
+    if(frame%4==0)
+    for(var i = 0; i < _('span').length; i++)
+    {
+      _('span')[i].style.opacity = 0;
+      _('span')[i].style.color = '#' + r(3,9) + r(3,9) + r(3,9);
+      _('span')[i].style.transform = 'translate3d(' + r(-150) + 'px, ' + r(-150) + 'px, 0px) rotate(' + r(-30,30) + 'deg)';
+    }
+  
+    else if(frame%4==3)
+    for(var i = 0; i < _('span').length; i++)
+    {
+      _('span')[i].style.opacity = 0;
+      _('span')[i].style.transform = 'translate3d(' + r(150) + 'px, ' + r(150) + 'px, 0px) rotate(' + r(-30,30) + 'deg)';
+    }
+  
+    else 
+    for(var i = 0; i < _('span').length; i++)
+    {
+      _('span')[i].style.transform = '';
+      _('span')[i].style.opacity = 1;
+    }
+    frame++;
+}, 1050); 
+	</script>
 
-@keyframes spin3 {
-  0% {
-    transform: rotate(0deg);
-  }
-  27% {
-    transform: rotate(0deg);  
-  }
-  40% {
-    transform: rotate(180deg);
-  }
-  45% {
-    transform: rotate(190deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  62% {
-    transform: rotate(180deg);
-  }
-  75% {
-    transform: rotate(360deg);
-  }
-  80% {
-    transform: rotate(370deg);
-  }
-  85% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spin4 {
-  0% {
-    transform: rotate(0deg);
-  }
-  38% {
-    transform: rotate(0deg);
-  }
-  60% {
-    transform: rotate(-360deg);
-  }
-  65% {
-    transform: rotate(-370deg);
-  }
-  75% {
-    transform: rotate(-360deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
-	</style>
-<div class="container">
-  <div class="dash uno"></div>
-  <div class="dash dos"></div>
-  <div class="dash tres"></div>
-  <div class="dash cuatro"></div>
-</div>
 
     </body>
 </html>
