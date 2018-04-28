@@ -1,95 +1,166 @@
-<?php 
-include 'includes/layout/header.php';
-include_once('includes/cntdb.php');
-include_once('includes/functions.php');
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    
+          
 
-	if (isset($_SESSION['admin_id'])) {
+  </head>
 
-	}
-?>
+<div class="container" style="
+			.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
 
-<link rel="stylesheet" href="public/static/css/style.index.css">
-<body>
-              
+.dash {
+  margin: 0 15px;
+  width: 35px;
+  height: 15px;
+  border-radius: 8px;
+  background: #FF2CBD;
+  box-shadow: 0 0 10px 0 #FECDFF;
+}
 
-    <div class="blog-header">
-      <div class="container">
-        <h1 class="blog-title">Mounaim</h1>
-        <p class="lead blog-description">Mounaim</p>
-      </div>
-    </div>
+.uno {
+  margin-right: -18px;
+  transform-origin: center left;
+  animation: spin 3s linear infinite;  
+}
 
-    <div class="container">
+.dos {
+  transform-origin: center right;
+  animation: spin2 3s linear infinite;
+  animation-delay: .2s;
+}
 
-      <div class="row">
+.tres {
+  transform-origin: center right;
+  animation: spin3 3s linear infinite;
+  animation-delay: .3s;
+}
 
-        <div class="col-sm-8 blog-main">
+.cuatro {
+  transform-origin: center right;
+  animation: spin4 3s linear infinite;
+  animation-delay: .4s;
+}
 
-                <?php  
-    $query = "SELECT * FROM `mounaim_bac2018`";
-    $result = mysqli_query($conn, $query);
-    if (mysqli_num_rows($result) > 0) {
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(360deg);
+  }
+  30% {
+    transform: rotate(370deg);
+  }
+  35% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
-    while($row = mysqli_fetch_assoc($result)) {
-           ?>
-            
-            
-          <div style="font-size: 15px;" class="blog-post">
-            <p class="blog-post-meta"><?php echo $row["Dates"];?> by <a href="#">Abdelmounaim</a></p>
-            <p><?php echo $row["Notes"];?></p>
+@keyframes spin2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-180deg);
+  }
+  35% {
+    transform: rotate(-190deg);
+  }
+  40% {
+    transform: rotate(-180deg);
+  }
+  78% {
+    transform: rotate(-180deg);
+  }
+  95% {
+    transform: rotate(-360deg);
+  }
+  98% {
+    transform: rotate(-370deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 
-              
-                        <?php if (isset($_SESSION['admin_id'])) {?>
-              <a href="edite.php?id=<?php echo $row["id"];?>">Edit</a> - 
-              <a href="del_note.php?id=<?php echo $row["id"];?>">Delete</a>
-              ><a target="_blank" href="adminPg.php">    Go to Admin Page</a>
-                                 <?php } ?>
-            <hr>
-            
-          </div><?php }} ?>
-            <!-- /.blog-post -->
+@keyframes spin3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  27% {
+    transform: rotate(0deg);  
+  }
+  40% {
+    transform: rotate(180deg);
+  }
+  45% {
+    transform: rotate(190deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  62% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  80% {
+    transform: rotate(370deg);
+  }
+  85% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
-          <nav class="blog-pagination">
-            <a class="btn btn-outline-primary" href="#">Older</a>
-            <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-          </nav>
-
-        </div><!-- /.blog-main -->
-
-        <div class="col-sm-3 offset-sm-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>Notice</h4>
-              <p><em>This website and this notes will publish next year after #BAC2018 results and I'm trying to add new postes every few days about what I study, some advises, ... to motivate you to keep going,another thing is that why I've choose English and not French or Arab? I'll tell in future! . "hhh, sorry for my breaking English I'm trying to learn it".</em></p>
-          </div>
-          <div class="sidebar-module">
-            <h4>Archives</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">December 2017</a></li>
-            </ol>
-          </div>
-          <div class="sidebar-module">
-            <h4>Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ol>
-          </div>
-        </div><!-- /.blog-sidebar -->
-
-    </div><!-- /.container -->
-
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
-
-
- 
- 
- 
- 
- <?php include 'includes/layout/footer.php';?>
+@keyframes spin4 {
+  0% {
+    transform: rotate(0deg);
+  }
+  38% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(-360deg);
+  }
+  65% {
+    transform: rotate(-370deg);
+  }
+  75% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}      
+			      ">
+  <div class="dash uno"></div>
+  <div class="dash dos"></div>
+  <div class="dash tres"></div>
+  <div class="dash cuatro"></div>
+</div>
+	<scripte>
+	
+	</scripte>
+    </body>
+</html>
