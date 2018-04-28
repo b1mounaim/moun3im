@@ -10,14 +10,15 @@
 
   </head>
 <body>
-<div class="container" style="
-			.container {
+<style>
+	.container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
 }
+
 .dash {
   margin: 0 15px;
   width: 35px;
@@ -26,26 +27,31 @@
   background: #FF2CBD;
   box-shadow: 0 0 10px 0 #FECDFF;
 }
+
 .uno {
   margin-right: -18px;
   transform-origin: center left;
   animation: spin 3s linear infinite;  
 }
+
 .dos {
   transform-origin: center right;
   animation: spin2 3s linear infinite;
   animation-delay: .2s;
 }
+
 .tres {
   transform-origin: center right;
   animation: spin3 3s linear infinite;
   animation-delay: .3s;
 }
+
 .cuatro {
   transform-origin: center right;
   animation: spin4 3s linear infinite;
   animation-delay: .4s;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -63,6 +69,7 @@
     transform: rotate(360deg);
   }
 }
+
 @keyframes spin2 {
   0% {
     transform: rotate(0deg);
@@ -92,6 +99,7 @@
     transform: rotate(-360deg);
   }
 }
+
 @keyframes spin3 {
   0% {
     transform: rotate(0deg);
@@ -124,6 +132,7 @@
     transform: rotate(360deg);
   }
 }
+
 @keyframes spin4 {
   0% {
     transform: rotate(0deg);
@@ -143,8 +152,9 @@
   100% {
     transform: rotate(-360deg);
   }
-}      
-			      ">
+}
+	</style>
+<div class="container">
   <div class="dash uno"></div>
   <div class="dash dos"></div>
   <div class="dash tres"></div>
